@@ -27,7 +27,7 @@ function Gallery(
 ) {
   return (
     <Container class="px-4 sm:py-10">
-      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 items-center">
+      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 items-center place-items-stretch">
         {page.products?.map((product, index) => (
           <div class="w-full list-none">
             <ProductCard
