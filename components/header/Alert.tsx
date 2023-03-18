@@ -20,25 +20,61 @@ function Alert({ alerts = [], interval = 5 }: Props) {
   const id = useId();
 
   return (
-    <div id={id}>
-      <Slider class="bg-badge gap-6 scrollbar-none">
-        {alerts.map((alert) => (
+    <>
+      {/* Mobile Version */}
+      <div id={id} class="md:hidden">
+        <Slider class="bg-badge gap-6 scrollbar-none">
+          {alerts.map((alert) => (
+            <>
+              <Text
+                class="flex justify-center items-center w-screen h-[38px]"
+                variant="caption"
+                tone="default-inverse"
+              >
+                {alert?.icon && (
+                  <Icon
+                    id={alert?.icon}
+                    width={20}
+                    height={20}
+                    strokeWidth={2}
+                  />
+                )} {alert.message}
+              </Text>
+            </>
+          ))}
+        </Slider>
+
+        <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
+      </div>
+
+      {/* Desktop Version */}
+      <div
+        id={id}
+        class="hidden md:flex flex-row justify-center items-center bg-secondaryBlue"
+      >
+        {alerts.map((alert, index) => (
           <>
+            {alert?.icon && (
+              <Icon
+                id={alert?.icon}
+                width={20}
+                height={20}
+                strokeWidth={2}
+                class="mr-2"
+              />
+            )}
             <Text
-              class="flex justify-center items-center w-screen h-[38px]"
+              class="py-1 px-2"
               variant="caption"
               tone="default-inverse"
             >
-              {alert?.icon && (
-                <Icon id={alert?.icon} width={20} height={20} strokeWidth={2} />
-              )} {alert.message}
+              {alert.message}
             </Text>
+            {index !== alerts.length - 1 && <span class="mx-2">|</span>}
           </>
         ))}
-      </Slider>
-
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
-    </div>
+      </div>
+    </>
   );
 }
 

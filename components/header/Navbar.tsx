@@ -34,15 +34,28 @@ function Navbar({ items, searchbar }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3">
-        <div class="flex-none w-44">
-          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
-            <Icon id="Logo" width={126} height={16} />
+      <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3 h-24">
+        <div class="flex-none w-[400px]">
+          <a
+            href="/"
+            aria-label="Store logo"
+            class="block px-4 py-3 w-[400px] text-white text-heading-1"
+          >
+            LIVROFACIL
           </a>
         </div>
-        <div class="flex-auto flex justify-center">
-          {items.map((item) => <NavItem item={item} />)}
+
+        <div class="flex-none w-[682px]">
+          <form action="/" method="get" class="block px-4 py-3 w-[665px]">
+            <input
+              type="text"
+              name="search"
+              placeholder="Digite aqui"
+              class="w-full border-2 border-gray-200 rounded-md py-2 px-4 placeholder-gray-500 focus:outline-none focus:border-blue-400"
+            />
+          </form>
         </div>
+
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
           <HeaderSearchMenu searchbar={searchbar} />
