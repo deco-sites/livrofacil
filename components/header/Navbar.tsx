@@ -22,14 +22,13 @@ function Navbar({ items, searchbar }: {
 
         <a
           href="/"
-          class={`flex-grow inline-flex items-center min-h-[${navbarHeight}]`}
+          class={`inline-flex items-center text-white min-h-[${navbarHeight}]`}
           aria-label="Store logo"
         >
-          <Icon id="Logo" width={126} height={16} />
+          LIVROFACIL
         </a>
 
         <div class="flex gap-1">
-          <HeaderButton variant="search" />
           <HeaderButton variant="cart" />
         </div>
       </div>

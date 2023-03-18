@@ -70,10 +70,10 @@ const Modal = ({
         <header class=" flex px-4 justify-between items-center  border-b-1 border-default bg-secondaryBlue items-start h-20">
           <div class="flex flex-col pt-5 pb-5">
             <h1>
-              <Text variant="heading-2" class="text-white">BEM-VINDO!</Text>
+              <Text variant="heading-2" class="text-white" tone="default-inverse">BEM-VINDO!</Text>
             </h1>
             <h1>
-              <Text variant="heading-2" class="text-white">
+              <Text variant="heading-2" class="text-white" tone="default-inverse">
                 JÁ É CADASTRADO?
               </Text>
             </h1>
