@@ -50,7 +50,13 @@ function CartButton() {
         displayCart.value = true;
       }}
     >
-      <Icon id="ShoppingCart" width={32} height={32} strokeWidth={2} class="items-center justify-center" />
+      <Icon
+        id="ShoppingCart"
+        width={32}
+        height={32}
+        strokeWidth={2}
+        class="items-center justify-center"
+      />
       {totalItems && (
         <span class="absolute text-[9px] right-0 top-0 rounded-full bg-badge text-white w-4 h-4 flex items-center justify-center">
           {totalItems}

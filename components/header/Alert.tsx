@@ -24,16 +24,15 @@ function Alert({ alerts = [], interval = 5 }: Props) {
       <Slider class="bg-badge gap-6 scrollbar-none">
         {alerts.map((alert) => (
           <>
-          
-          
-          <Text
-            class="flex justify-center items-center w-screen h-[38px]"
-            variant="caption"
-            tone="default-inverse"
-          >
-            {alert?.icon && <Icon id={alert?.icon} width={20} height={20} strokeWidth={2} />}{' '}
-            {alert.message}
-          </Text>
+            <Text
+              class="flex justify-center items-center w-screen h-[38px]"
+              variant="caption"
+              tone="default-inverse"
+            >
+              {alert?.icon && (
+                <Icon id={alert?.icon} width={20} height={20} strokeWidth={2} />
+              )} {alert.message}
+            </Text>
           </>
         ))}
       </Slider>
