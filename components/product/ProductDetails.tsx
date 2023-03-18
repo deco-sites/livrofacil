@@ -1,4 +1,4 @@
-import { useSignal } from "@preact/signals"
+import { useSignal } from "@preact/signals";
 import Image from "deco-sites/std/components/Image.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import Container from "$store/components/ui/Container.tsx";
@@ -47,7 +47,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
   const { price, listPrice, seller, installments } = useOffer(offers);
   const [front, back] = images ?? [];
 
-  const quantityOfProduct = useSignal(1)
+  const quantityOfProduct = useSignal(1);
 
   return (
     <Container class="py-0 sm:py-10">
@@ -81,9 +81,11 @@ function Details({ page }: { page: ProductDetailsPage }) {
               <Text tone="subdued" variant="caption" class="text(sm lightGray)">
                 ISBN: {gtin}
               </Text>
-              {/* <p>
+              {
+                /* <p>
                 {JSON.stringify(installments, null, 2)}
-              </p> */}
+              </p> */
+              }
             </div>
             <h1>
               <Text variant="heading-3" class="font-extraBold">{name}</Text>
@@ -111,9 +113,9 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 {formatPrice(price, offers!.priceCurrency!)}
               </Text>
             </div>
-            {!installments.includes('1x') && (
+            {installments && !installments.includes("1x") && (
               <Text tone="subdued" variant="caption">
-                {installments.replace('.', ',')}
+                {installments.replace(".", ",")}
               </Text>
             )}
           </div>
@@ -131,21 +133,27 @@ function Details({ page }: { page: ProductDetailsPage }) {
                     <button
                       class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6"
                       onClick={() => {
-                        if (quantityOfProduct <= 1) {
-                          return
+                        if (quantityOfProduct.value <= 1) {
+                          return;
                         }
 
-                        quantityOfProduct.value--
+                        quantityOfProduct.value--;
                       }}
-                    >-</button>
-                    <div class="flex justify-center w-6 h-6">{quantityOfProduct.value}</div>
+                    >
+                      -
+                    </button>
+                    <div class="flex justify-center w-6 h-6">
+                      {quantityOfProduct.value}
+                    </div>
                     <button
                       class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6"
                       onClick={() => {
-                        quantityOfProduct.value++
-                        console.log(quantityOfProduct)
+                        quantityOfProduct.value++;
+                        console.log(quantityOfProduct);
                       }}
-                    >+</button>
+                    >
+                      +
+                    </button>
                   </div>
                   <AddToCartButton
                     skuId={productID}
@@ -155,21 +163,58 @@ function Details({ page }: { page: ProductDetailsPage }) {
               </>
             )}
             <Button variant="secondary" class="border-none my-1 font-body">
-              <Icon id="Heart" width={20} height={20} strokeWidth={2} color="#9E9E9E" />{" "}
-              <span class="text-xs text-[#424242]">Adicionar a lista de desejos</span>
+              <Icon
+                id="Heart"
+                width={20}
+                height={20}
+                strokeWidth={2}
+                color="#9E9E9E"
+              />{" "}
+              <span class="text-xs text-[#424242]">
+                Adicionar a lista de desejos
+              </span>
             </Button>
             <div>
               <p class="text(md #333 center)">Formas de pagamento</p>
               <ul class="flex gap-2 justify-center">
-                <li><Icon id="MasterCardColored" width={47} height={30} strokeWidth={2} /></li>
-                <li><Icon id="VisaColored" width={50} height={30} strokeWidth={2} /></li>
-                <li><Icon id="DinersClubColored" width={50} height={30} strokeWidth={2} /></li>
+                <li>
+                  <Icon
+                    id="MasterCardColored"
+                    width={47}
+                    height={30}
+                    strokeWidth={2}
+                  />
+                </li>
+                <li>
+                  <Icon
+                    id="VisaColored"
+                    width={50}
+                    height={30}
+                    strokeWidth={2}
+                  />
+                </li>
+                <li>
+                  <Icon
+                    id="DinersClubColored"
+                    width={50}
+                    height={30}
+                    strokeWidth={2}
+                  />
+                </li>
               </ul>
             </div>
             <div class="outline mt-4">
               <ul class="px-4">
-                <li><span class="text(sm secondaryColorHeading)">Parcelamento no cartão de crédito</span></li>
-                <li><span class="text(sm secondaryColorHeading)">Pagamento em até dois cartões</span></li>
+                <li>
+                  <span class="text(sm secondaryColorHeading)">
+                    Parcelamento no cartão de crédito
+                  </span>
+                </li>
+                <li>
+                  <span class="text(sm secondaryColorHeading)">
+                    Pagamento em até dois cartões
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
