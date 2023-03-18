@@ -66,12 +66,17 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-2">{title}</Text>
-          </h1>
-          <Button variant="icon" onClick={onClose}>
+      <section class=" h-full w-2/3 bg-default flex flex-col ">
+        <header class=" flex px-4 justify-between items-center  border-b-1 border-default bg-secondaryBlue items-start h-20">
+          <div class="flex flex-col pt-5 pb-5">
+            <h1>
+              <Text variant="heading-2" class="text-white">BEM-VINDO!</Text>
+            </h1>
+            <h1>
+              <Text variant="heading-2" class="text-white">JÁ É CADASTRADO?</Text>
+            </h1>
+          </div>
+          <Button variant="icon" onClick={onClose} >
             <Icon id="XMark" width={20} height={20} strokeWidth={2} />
           </Button>
         </header>

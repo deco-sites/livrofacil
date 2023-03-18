@@ -14,7 +14,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 
   const title = (
     <Text
-      class="flex-grow min-h-[40px] flex items-center justify-start"
+      class="flex-grow min-h-[40px] flex items-center justify-start text-lightMenuGray"
       variant={level === 0 ? "menu" : "caption"}
     >
       {item.label}
@@ -38,15 +38,19 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
         {hasChildren && (
           <Button variant="icon">
             <Icon
-              class={open.value === true ? "hidden" : "block"}
-              id="Plus"
+              class={`${
+                open.value === true ? "hidden" : "block"
+              } text-orangeTooltip`}
+              id="RightArrow"
               height={20}
               width={20}
               strokeWidth={1.5}
             />
             <Icon
-              class={open.value === true ? "block" : "hidden"}
-              id="Minus"
+              class={`${
+                open.value === true ? "block" : "hidden"
+              } text-orangeTooltip`} 
+              id="DownArrow"
               height={20}
               width={20}
               strokeWidth={1.5}
@@ -57,13 +61,6 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 
       {hasChildren && (
         <ul class={`flex-col ${open.value === true ? "flex" : "hidden"}`}>
-          <li>
-            <a href={item.href} class="w-full py-2 pl-2 inline-block">
-              <Text class="underline" variant="caption">
-                Ver todos
-              </Text>
-            </a>
-          </li>
           {item.children!.map((node) => (
             <MenuItem
               item={node}
