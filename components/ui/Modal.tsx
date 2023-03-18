@@ -73,10 +73,12 @@ const Modal = ({
               <Text variant="heading-2" class="text-white">BEM-VINDO!</Text>
             </h1>
             <h1>
-              <Text variant="heading-2" class="text-white">JÁ É CADASTRADO?</Text>
+              <Text variant="heading-2" class="text-white">
+                JÁ É CADASTRADO?
+              </Text>
             </h1>
           </div>
-          <Button variant="icon" onClick={onClose} >
+          <Button variant="icon" onClick={onClose}>
             <Icon id="XMark" width={20} height={20} strokeWidth={2} />
           </Button>
         </header>

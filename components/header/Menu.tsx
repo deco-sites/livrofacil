@@ -49,7 +49,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
             <Icon
               class={`${
                 open.value === true ? "block" : "hidden"
-              } text-orangeTooltip`} 
+              } text-orangeTooltip`}
               id="DownArrow"
               height={20}
               width={20}
