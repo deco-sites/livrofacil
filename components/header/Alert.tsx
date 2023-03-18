@@ -50,7 +50,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
       {/* Desktop Version */}
       <div
         id={id}
-        class="hidden md:flex flex-row justify-center items-center bg-secondaryBlue"
+        class="hidden md:flex flex-row justify-center items-center bg-secondaryBlue h-[38px]"
       >
         {alerts.map((alert, index) => (
           <>

@@ -1,91 +1,93 @@
 import type {
-	AggregateOffer,
-	UnitPriceSpecification,
+  AggregateOffer,
+  UnitPriceSpecification,
 } from "deco-sites/std/commerce/types.ts";
 
 const bestInstallment = (
-	acc: UnitPriceSpecification | null,
-	curr: UnitPriceSpecification
+  acc: UnitPriceSpecification | null,
+  curr: UnitPriceSpecification,
 ) => {
-	if (curr.priceComponentType !== "https://schema.org/Installment") {
-		return acc;
-	}
+  if (curr.priceComponentType !== "https://schema.org/Installment") {
+    return acc;
+  }
 
-	if (!acc) {
-		return curr;
-	}
+  if (!acc) {
+    return curr;
+  }
 
-	if (acc.price > curr.price) {
-		return curr;
-	}
+  if (acc.price > curr.price) {
+    return curr;
+  }
 
-	if (acc.price < curr.price) {
-		return acc;
-	}
+  if (acc.price < curr.price) {
+    return acc;
+  }
 
-	if (
-		acc.billingDuration &&
-		curr.billingDuration &&
-		acc.billingDuration < curr.billingDuration
-	) {
-		return curr;
-	}
+  if (
+    acc.billingDuration &&
+    curr.billingDuration &&
+    acc.billingDuration < curr.billingDuration
+  ) {
+    return curr;
+  }
 
-	return acc;
+  return acc;
 };
 
 const installmentToString = (
-	installment: UnitPriceSpecification,
-	sellingPrice: number
+  installment: UnitPriceSpecification,
+  sellingPrice: number,
 ) => {
-	const { billingDuration, billingIncrement, price } = installment;
+  const { billingDuration, billingIncrement, price } = installment;
 
-	if (!billingDuration || !billingIncrement) {
-		return "";
-	}
+  if (!billingDuration || !billingIncrement) {
+    return "";
+  }
 
-	const withTaxes = sellingPrice < price;
+  const withTaxes = sellingPrice < price;
 
-	return `${billingDuration}x de R$ ${billingIncrement} ${
-		withTaxes ? "com juros" : "sem juros"
-	}`;
+  return `${billingDuration}x de R$ ${billingIncrement} ${
+    withTaxes ? "com juros" : "sem juros"
+  }`;
 };
 
 const installmentToObject = (installment: UnitPriceSpecification) => {
-	const { billingDuration, billingIncrement } = installment;
+  const { billingDuration, billingIncrement } = installment;
 
-	if (!billingDuration || !billingIncrement) {
-		return null;
-	}
+  if (!billingDuration || !billingIncrement) {
+    return null;
+  }
 
-	// const withTaxes = sellingPrice < price;
-	return {
-		billingDuration: billingDuration,
-		billingIncrement: billingIncrement,
-	};
+  // const withTaxes = sellingPrice < price;
+  return {
+    billingDuration: billingDuration,
+    billingIncrement: billingIncrement,
+  };
 };
 
 export const useOffer = (aggregateOffer?: AggregateOffer) => {
-	const offer = aggregateOffer?.offers[0];
-	const listPrice = offer?.priceSpecification.find(
-		(spec) => spec.priceType === "https://schema.org/ListPrice"
-	);
-	const installment = offer?.priceSpecification.reduce(bestInstallment, null);
-	const seller = offer?.seller;
-	const price = offer?.price;
-	let discountOff = 0;
-	if (listPrice?.price && price) {
-		discountOff = ((listPrice.price - price) / listPrice.price) * 100;
-	}
+  const offer = aggregateOffer?.offers[0];
+  const listPrice = offer?.priceSpecification.find(
+    (spec) => spec.priceType === "https://schema.org/ListPrice",
+  );
+  const installment = offer?.priceSpecification.reduce(bestInstallment, null);
+  const seller = offer?.seller;
+  const price = offer?.price;
+  let discountOff = 0;
+  if (listPrice?.price && price) {
+    discountOff = ((listPrice.price - price) / listPrice.price) * 100;
+  }
 
-	return {
-		price,
-		listPrice: listPrice?.price,
-		seller,
-		discountOff: discountOff.toFixed(0),
-		installments:
-			installment && price ? installmentToString(installment, price) : null,
-		installmentToObject:
-			installment && price ? installmentToObject(installment) : null,
-	};
+  return {
+    price,
+    listPrice: listPrice?.price,
+    seller,
+    discountOff: discountOff.toFixed(0),
+    installments: installment && price
+      ? installmentToString(installment, price)
+      : null,
+    installmentToObject: installment && price
+      ? installmentToObject(installment)
+      : null,
+  };
 };

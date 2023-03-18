@@ -35,11 +35,11 @@ function Navbar({ items, searchbar }: {
 
       {/* Desktop Version */}
       <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3 h-24">
-        <div class="flex-none w-[400px]">
+        <div class="flex-none w-[277px]">
           <a
             href="/"
             aria-label="Store logo"
-            class="block px-4 py-3 w-[400px] text-white text-heading-1"
+            class="block px-4 py-3 w-[277px] text-white text-heading-1"
           >
             LIVROFACIL
           </a>

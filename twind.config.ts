@@ -107,7 +107,7 @@ const options: Omit<Options, "selfURL"> = {
         interactive: ["2px solid #3379EF", "2px"],
       },
       fontSize: {
-        "heading-1": ["56px", "67.2px"],
+        "heading-1": ["42px", "67.2px"],
         "heading-2": ["14px", "14px"],
         "heading-3": ["20px", "24px"],
         "menu": ["11px", "11px"],
