@@ -1,3 +1,4 @@
+import { useSignal } from "@preact/signals"
 import Image from "deco-sites/std/components/Image.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import Container from "$store/components/ui/Container.tsx";
@@ -41,9 +42,12 @@ function Details({ page }: { page: ProductDetailsPage }) {
     image: images,
     name,
     gtin,
+    brand,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
   const [front, back] = images ?? [];
+
+  const quantityOfProduct = useSignal(1)
 
   return (
     <Container class="py-0 sm:py-10">
@@ -72,50 +76,102 @@ function Details({ page }: { page: ProductDetailsPage }) {
             itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
           />
           {/* Code and name */}
-          <div class="mt-4 sm:mt-8">
+          <div class="mt-4 sm:mt-8 mb-10">
             <div>
-              <Text tone="subdued" variant="caption">
-                Cod. {gtin}
+              <Text tone="subdued" variant="caption" class="text(sm lightGray)">
+                ISBN: {gtin}
               </Text>
+              {/* <p>
+                {JSON.stringify(installments, null, 2)}
+              </p> */}
             </div>
             <h1>
-              <Text variant="heading-3">{name}</Text>
+              <Text variant="heading-3" class="font-extraBold">{name}</Text>
             </h1>
+            <div class="flex flex-col">
+              <Text class="text(base lightGray) mb-1">
+                Editora: {brand}
+              </Text>
+              <button class="text(sm primaryColorHeading underline) w-max">
+                Ver descrição
+              </button>
+            </div>
           </div>
           {/* Prices */}
           <div class="mt-4">
-            <div class="flex flex-row gap-2 items-center">
+            <div class="flex flex-col gap-0">
               <Text
-                class="line-through"
+                class="line-through text-md"
                 tone="subdued"
                 variant="list-price"
               >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </Text>
-              <Text tone="price" variant="heading-3">
+              <Text tone="price" variant="heading-2" class="text-priceColor">
                 {formatPrice(price, offers!.priceCurrency!)}
               </Text>
             </div>
-            <Text tone="subdued" variant="caption">
-              {installments}
-            </Text>
+            {!installments.includes('1x') && (
+              <Text tone="subdued" variant="caption">
+                {installments.replace('.', ',')}
+              </Text>
+            )}
           </div>
           {/* Sku Selector */}
           <div class="mt-4 sm:mt-6">
             <ProductSelector product={product} />
           </div>
           {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+          <div class="mt-4 sm:mt-10 flex flex-col gap-0">
             {seller && (
-              <AddToCartButton
-                skuId={productID}
-                sellerId={seller}
-              />
+              <>
+                <span class="text(xs lightGray)">Quantidade</span>
+                <div class="flex gap-2 mb-2">
+                  <div class="flex items-center">
+                    <button
+                      class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6"
+                      onClick={() => {
+                        if (quantityOfProduct <= 1) {
+                          return
+                        }
+
+                        quantityOfProduct.value--
+                      }}
+                    >-</button>
+                    <div class="flex justify-center w-6 h-6">{quantityOfProduct.value}</div>
+                    <button
+                      class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6"
+                      onClick={() => {
+                        quantityOfProduct.value++
+                        console.log(quantityOfProduct)
+                      }}
+                    >+</button>
+                  </div>
+                  <AddToCartButton
+                    skuId={productID}
+                    sellerId={seller}
+                  />
+                </div>
+              </>
             )}
-            <Button variant="secondary">
-              <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
-              Favoritar
+            <Button variant="secondary" class="border-none my-1 font-body">
+              <Icon id="Heart" width={20} height={20} strokeWidth={2} color="#9E9E9E" />{" "}
+              <span class="text-xs text-[#424242]">Adicionar a lista de desejos</span>
             </Button>
+            <div>
+              <p class="text(md #333 center)">Formas de pagamento</p>
+              <ul class="flex gap-2 justify-center">
+                <li><Icon id="MasterCardColored" width={47} height={30} strokeWidth={2} /></li>
+                <li><Icon id="VisaColored" width={50} height={30} strokeWidth={2} /></li>
+                <li><Icon id="DinersClubColored" width={50} height={30} strokeWidth={2} /></li>
+              </ul>
+            </div>
+            <div class="outline mt-4">
+              <ul class="px-4">
+                <li><span class="text(sm secondaryColorHeading)">Parcelamento no cartão de crédito</span></li>
+                <li><span class="text(sm secondaryColorHeading)">Pagamento em até dois cartões</span></li>
+              </ul>
+            </div>
           </div>
           {/* Description card */}
           <div class="mt-4 sm:mt-6">

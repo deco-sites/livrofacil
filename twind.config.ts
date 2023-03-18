@@ -112,6 +112,10 @@ const options: Omit<Options, "selfURL"> = {
         "body": ["16px", "20px"],
         "caption": ["13px", "16px"],
         "list-price": ["10px", "20px"],
+        "xs": ["10px"],
+        "sm": ["12px"],
+        "md": ["14px"],
+        "base": ["16px"]
       },
       fontWeight: {
         "heading-1": "500",
@@ -122,6 +126,7 @@ const options: Omit<Options, "selfURL"> = {
         "body": "400",
         "caption": "400",
         "list-price": "400",
+        "extraBold": '900'
       },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
