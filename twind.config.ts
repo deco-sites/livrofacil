@@ -73,12 +73,13 @@ const options: Omit<Options, "selfURL"> = {
         "secondaryColorHeading": "#215C83",
         "priceColor": "#43BFD3",
         "lightGray": "#9E9E9E",
-        "lightMenuGray": "#8a8a8a",
         "secondaryTextColor": "#616161",
+        "thirdTextColor": "#424242",
         "pinkFlagColor": "#E30B79",
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
+        "lightMenuGray": "#8a8a8a",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -100,6 +101,7 @@ const options: Omit<Options, "selfURL"> = {
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
+        "borderProduct": "#c9c9c9",
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],
