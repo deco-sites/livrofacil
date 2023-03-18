@@ -23,7 +23,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
     <>
       {/* Mobile Version */}
       <div id={id} class="md:hidden">
-        <Slider class="bg-badge gap-6 scrollbar-none">
+        <Slider class="bg-secondaryBlue gap-6 scrollbar-none">
           {alerts.map((alert) => (
             <>
               <Text

@@ -461,6 +461,10 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "DownArrow",
                     },
+                    {
+                      "type": "string",
+                      "const": "Flag",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -676,6 +680,10 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "DownArrow",
                               },
+                              {
+                                "type": "string",
+                                "const": "Flag",
+                              },
                             ],
                             "title": "Icon",
                           },
@@ -858,6 +866,10 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "DownArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Flag",
                     },
                   ],
                   "title": "Icon",
