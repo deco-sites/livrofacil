@@ -923,6 +923,13 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Page",
           },
+          "flagDescontoOff": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Flag Desconto Off",
+          },
         },
         "required": [
           "page",

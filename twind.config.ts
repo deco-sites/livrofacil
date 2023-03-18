@@ -74,6 +74,7 @@ const options: Omit<Options, "selfURL"> = {
         "priceColor": '#43BFD3',
         "lightGray": "#9E9E9E",
         "secondaryTextColor": '#616161',
+        "thirdTextColor": "#424242",
         "pinkFlagColor": '#E30B79',
         "blueFlag": '#3F69FF',
         "yellowModal": '#FFDB00',
@@ -98,7 +99,8 @@ const options: Omit<Options, "selfURL"> = {
         "pinkFlagColor": '#E30B79',
         "blueFlag": '#3F69FF',
         "yellowModal": '#FFDB00',
-        "orangeTooltip": '#ED9936'
+        "orangeTooltip": '#ED9936',
+        "borderProduct": '#c9c9c9'
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],

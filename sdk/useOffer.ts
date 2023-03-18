@@ -58,11 +58,16 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
   const installment = offer?.priceSpecification.reduce(bestInstallment, null);
   const seller = offer?.seller;
   const price = offer?.price;
+  let discountOff = 0
+  if(listPrice?.price && price) {
+    discountOff = ((listPrice.price - price) / listPrice.price) * 100;
+  }
 
   return {
     price,
     listPrice: listPrice?.price,
     seller,
+    discountOff: discountOff.toFixed(0),
     installments: installment && price
       ? installmentToString(installment, price)
       : null,
