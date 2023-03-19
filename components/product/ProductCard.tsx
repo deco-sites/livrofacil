@@ -146,7 +146,8 @@ function ProductCard({ product, preload, flagDescontoOff }: Props) {
             class="rounded w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />
-          {seller && (
+          {
+            /* {seller && (
             <div
               class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
               style={{
@@ -156,10 +157,12 @@ function ProductCard({ product, preload, flagDescontoOff }: Props) {
             >
               <Sizes {...product} />
               <Button as="a" href={product.url}>
-                Visualizar Produto
+
               </Button>
             </div>
-          )}
+          )} */
+          }
+          <a></a>
         </div>
 
         <div class="flex flex-col gap-1 py-2">
