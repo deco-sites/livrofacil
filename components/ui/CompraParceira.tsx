@@ -10,7 +10,7 @@ function CompraParceira({ image }: Props) {
 	return (
 		<div class="flex flex-col gap-2 bg-secondaryBlue py-[20px] px-[8px] xl:(max-w-[832px] mx-auto rounded flex-row)">
 			<div class="flex gap-4 items-center mb-4 xl:(w-1/2 pl-[62px] m-0) relative">
-				<Image class="xl:(absolute w-[135px] h-[135px] left-[-90px] bottom-[-35px])" src={image} width={60} height={60} loading="lazy" />
+				<Image class="xl:(absolute w-[135px] h-[135px] left-[-90px] bottom-[-35px])" src={image} width={60} height={60} loading="lazy" alt="Icone de livros" />
 				<div class="flex flex-col">
 					<span class="text-white font-bold xl:(text-[20px])">
 						Compre aqui seu material escolar!
