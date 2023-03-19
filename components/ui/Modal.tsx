@@ -3,7 +3,7 @@ import Button from "$store/components/ui/Button.tsx";
 import { useEffect, useRef } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
-import type { JSX } from "preact";
+import type { ComponentChildren, JSX } from "preact";
 
 import Icon from "./Icon.tsx";
 
@@ -19,6 +19,7 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
+  headerContent?: ComponentChildren;
 };
 
 const styles = {
@@ -34,6 +35,7 @@ const Modal = ({
   onClose,
   children,
   loading,
+  headerContent,
   ...props
 }: Props) => {
   const lazy = useSignal(false);
@@ -66,15 +68,19 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-2">{title}</Text>
-          </h1>
-          <Button variant="icon" onClick={onClose}>
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-          </Button>
-        </header>
+      <section class="h-full bg-default flex flex-col">
+        {headerContent
+          ? headerContent
+          : (
+            <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
+              <h1>
+                <Text variant="heading-2">{title}</Text>
+              </h1>
+              <Button variant="icon" onClick={onClose}>
+                <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+              </Button>
+            </header>
+          )}
         <div class="overflow-y-auto h-full flex flex-col">
           {loading === "lazy" ? lazy.value && children : children}
         </div>

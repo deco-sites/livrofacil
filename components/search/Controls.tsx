@@ -1,3 +1,4 @@
+import Logger from "$store/islands/Logger.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
@@ -8,6 +9,7 @@ import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
+import { headerHeight } from "../header/constants.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -23,32 +25,59 @@ function Controls({ page }: { page: ProductListingPage }) {
   const breadcrumb = page?.breadcrumb;
 
   return (
-    <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4 sm:flex-row sm:h-[53px] md:border-b-1">
-      <div class="flex flex-row items-center sm:p-0 mb-2">
+    <Container
+      class={`mt-[${headerHeight}] flex flex-col justify-between mb-4 md:mb-0 p-4 sm:gap-4 sm:flex-row sm:h-[53px] sm:justify-between sm:px-4`}
+    >
+      {/* <Logger value={page} /> */}
+      <div class="flex flex-row items-center sm:p-0 mb-6 sm:m-0">
         <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
       </div>
-      <div class="flex flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
+      <div class="flex flex-row sm:gap-4 items-center justify-between gap-6">
         <Button
-          variant="tertiary"
+          variant="secondary"
           onClick={() => {
             open.value = true;
           }}
+          class="flex-1 md:hidden"
         >
-          Filtrar
-          <Icon id="FilterList" width={16} height={16} />
+          Filtrar por
+          <Icon id="FilterList" width={18} height={18} />
         </Button>
         <Sort />
       </div>
 
       <Modal
-        title="Filtrar"
-        mode="sidebar-right"
+        headerContent={
+          <div class="flex bg-primaryBlue px-4 justify-between  items-center h-20">
+            <span class="flex gap-1 items-center text-white text-[20px]">
+              Filtrar resultado
+              <Icon id="FilterList" width={18} height={18} />
+            </span>
+            <Button
+              variant="blank"
+              onClick={() => {
+                open.value = false;
+              }}
+              class="bg-white h-[36px] px-2 rounded outline-none focus:outline-none active:bg-gray-200 hover:bg-gray-200"
+            >
+              <Icon
+                id="XMark"
+                width={20}
+                height={20}
+                strokeWidth={4}
+                class="stroke-current text-yellowModal"
+              />
+            </Button>
+          </div>
+        }
+        mode="sidebar-left"
         open={open.value}
         onClose={() => {
           open.value = false;
         }}
+        class="w-5/6"
       >
-        <Filters filters={filters} />
+        <Filters filters={filters} class="flex" />
       </Modal>
     </Container>
   );

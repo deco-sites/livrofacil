@@ -55,6 +55,8 @@ const options: Omit<Options, "selfURL"> = {
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
+        "orangeButton": "#FFB400",
+        "grayEditoras": "#fcfcfc",
       },
       textColor: {
         "default": "#161616",
@@ -74,10 +76,12 @@ const options: Omit<Options, "selfURL"> = {
         "priceColor": "#43BFD3",
         "lightGray": "#9E9E9E",
         "secondaryTextColor": "#616161",
+        "thirdTextColor": "#424242",
         "pinkFlagColor": "#E30B79",
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
+        "lightMenuGray": "#8a8a8a",
       },
       borderColor: {
         "default": "#D4DBD7",
@@ -99,15 +103,16 @@ const options: Omit<Options, "selfURL"> = {
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
+        "borderProduct": "#c9c9c9",
       },
       outline: {
         interactive: ["2px solid #3379EF", "2px"],
       },
       fontSize: {
-        "heading-1": ["56px", "67.2px"],
-        "heading-2": ["24px", "28.8px"],
+        "heading-1": ["42px", "67.2px"],
+        "heading-2": ["14px", "14px"],
         "heading-3": ["20px", "24px"],
-        "menu": ["16px", "20px"],
+        "menu": ["11px", "11px"],
         "button": ["14px", "18px"],
         "body": ["16px", "20px"],
         "caption": ["13px", "16px"],
@@ -221,6 +226,42 @@ const options: Omit<Options, "selfURL"> = {
       "&::-webkit-scrollbar": {
         display: "none",
       },
+    },
+    "scrollbar-color": {
+      "&::-webkit-scrollbar-thumb": {
+        "background": "#318ac4",
+        "border-radius": "4px",
+      },
+      "&::-webkit-scrollbar": {
+        "width": "9px",
+      },
+      "&::-webkit-scrollbar-track": {
+        "opacity": ".3",
+        "background-color": "#ECF2F6",
+        "border": "4px solid transparent",
+        "background-clip": "content-box",
+      },
+    },
+    "scrollbar-horizontal-min": {
+      "&::-webkit-scrollbar-thumb": {
+        "background-color": "#318ac4",
+        "border-radius": "4px",
+      },
+      "&::-webkit-scrollbar": {
+        "width": "6px",
+        "height": "6px",
+        "background-color": "#F5F5F5",
+      },
+      "&::-webkit-scrollbar-track": {
+        "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.3)",
+        "background-color": "#F5F5F5",
+      },
+    },
+    "mix-blend-multiply": {
+      "mix-blend-mode": "multiply",
+    },
+    "bg-blend-multiply": {
+      "background-blend-mode": "multiply",
     },
   },
 };

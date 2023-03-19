@@ -15,27 +15,31 @@ import * as $$1 from "./islands/DescriptionModal.tsx";
 import * as $$2 from "./islands/HeaderButton.tsx";
 import * as $$3 from "./islands/HeaderModals.tsx";
 import * as $$4 from "./islands/HeaderSearchMenu.tsx";
-import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/SliderJS.tsx";
+import * as $$5 from "./islands/Logger.tsx";
+import * as $$6 from "./islands/SearchControls.tsx";
+import * as $$7 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
-import * as $$$2 from "./sections/CookieConsent.tsx";
-import * as $$$3 from "./sections/DesignSystem.story.tsx";
-import * as $$$4 from "./sections/Features.tsx";
-import * as $$$5 from "./sections/Footer.tsx";
-import * as $$$6 from "./sections/Header.tsx";
-import * as $$$7 from "./sections/Highlights.tsx";
-import * as $$$8 from "./sections/ProductDetails.tsx";
-import * as $$$9 from "./sections/ProductGallery.tsx";
-import * as $$$10 from "./sections/ProductShelf.tsx";
-import * as $$$11 from "./sections/SearchControls.tsx";
-import * as $$$12 from "./sections/WhatsApp.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$2 from "./sections/CompraParceira.tsx";
+import * as $$$3 from "./sections/CookieConsent.tsx";
+import * as $$$4 from "./sections/DesignSystem.story.tsx";
+import * as $$$5 from "./sections/Editoras.tsx";
+import * as $$$6 from "./sections/Features.tsx";
+import * as $$$7 from "./sections/Footer.tsx";
+import * as $$$8 from "./sections/Header.tsx";
+import * as $$$9 from "./sections/Highlights.tsx";
+import * as $$$10 from "./sections/ProductDetails.tsx";
+import * as $$$11 from "./sections/ProductGallery.tsx";
+import * as $$$12 from "./sections/ProductShelf.tsx";
+import * as $$$13 from "./sections/SearchControls.tsx";
+import * as $$$14 from "./sections/ThreeBanners.tsx";
+import * as $$$15 from "./sections/WhatsApp.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$18 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$19 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$21 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -64,34 +68,38 @@ const manifest: DecoManifest = {
     "./routes/index.tsx": $4,
   },
   islands: {
-    "./islands/AddToCartButton.tsx": $$0,
-    "./islands/DescriptionModal.tsx": $$1,
+    "./islands/DescriptionModal.tsx": $$0,
+    "./islands/AddToCartButton.tsx": $$1,
     "./islands/HeaderButton.tsx": $$2,
     "./islands/HeaderModals.tsx": $$3,
     "./islands/HeaderSearchMenu.tsx": $$4,
-    "./islands/SearchControls.tsx": $$5,
-    "./islands/SliderJS.tsx": $$6,
+    "./islands/Logger.tsx": $$5,
+    "./islands/SearchControls.tsx": $$6,
+    "./islands/SliderJS.tsx": $$7,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
     "./sections/Carousel.tsx": $$$1,
-    "./sections/CookieConsent.tsx": $$$2,
-    "./sections/DesignSystem.story.tsx": $$$3,
-    "./sections/Features.tsx": $$$4,
-    "./sections/Footer.tsx": $$$5,
-    "./sections/Header.tsx": $$$6,
-    "./sections/Highlights.tsx": $$$7,
-    "./sections/ProductDetails.tsx": $$$8,
-    "./sections/ProductGallery.tsx": $$$9,
-    "./sections/ProductShelf.tsx": $$$10,
-    "./sections/SearchControls.tsx": $$$11,
-    "./sections/WhatsApp.tsx": $$$12,
-    "deco-sites/std/sections/SEO.tsx": $$$13,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$14,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$15,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$16,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$17,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$18,
+    "./sections/CompraParceira.tsx": $$$2,
+    "./sections/CookieConsent.tsx": $$$3,
+    "./sections/DesignSystem.story.tsx": $$$4,
+    "./sections/Editoras.tsx": $$$5,
+    "./sections/Features.tsx": $$$6,
+    "./sections/Footer.tsx": $$$7,
+    "./sections/Header.tsx": $$$8,
+    "./sections/Highlights.tsx": $$$9,
+    "./sections/ProductDetails.tsx": $$$10,
+    "./sections/ProductGallery.tsx": $$$11,
+    "./sections/ProductShelf.tsx": $$$12,
+    "./sections/SearchControls.tsx": $$$13,
+    "./sections/ThreeBanners.tsx": $$$14,
+    "./sections/WhatsApp.tsx": $$$15,
+    "deco-sites/std/sections/SEO.tsx": $$$16,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$17,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$18,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$19,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$20,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$21,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -301,12 +309,71 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./sections/CompraParceira.tsx": {
+      "inputSchema": {
+        "title": " Compra Parceira",
+        "type": "object",
+        "properties": {
+          "image": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Image",
+          },
+        },
+        "required": [
+          "image",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/CookieConsent.tsx": {
       "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/DesignSystem.story.tsx": {
       "inputSchema": null,
+      "outputSchema": null,
+    },
+    "./sections/Editoras.tsx": {
+      "inputSchema": {
+        "title": " Editoras",
+        "type": "object",
+        "properties": {
+          "editoras": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "image": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Image",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image alt text",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description": "When you click you go to",
+                },
+              },
+              "required": [
+                "image",
+                "alt",
+                "href",
+              ],
+            },
+            "title": "Editoras",
+          },
+        },
+        "required": [
+          "editoras",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/Features.tsx": {
@@ -323,6 +390,10 @@ const manifest: DecoManifest = {
                 "icon": {
                   "type": "string",
                   "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "",
+                    },
                     {
                       "type": "string",
                       "const": "ChevronLeft",
@@ -471,6 +542,22 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "Close",
                     },
+                    {
+                      "type": "string",
+                      "const": "RightArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DownArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Flag",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Heart",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -546,6 +633,10 @@ const manifest: DecoManifest = {
                           "icon": {
                             "type": "string",
                             "anyOf": [
+                              {
+                                "type": "string",
+                                "const": "",
+                              },
                               {
                                 "type": "string",
                                 "const": "ChevronLeft",
@@ -694,6 +785,22 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "Close",
                               },
+                              {
+                                "type": "string",
+                                "const": "RightArrow",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DownArrow",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Flag",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Heart",
+                              },
                             ],
                             "title": "Icon",
                           },
@@ -728,7 +835,170 @@ const manifest: DecoManifest = {
           "alerts": {
             "type": "array",
             "items": {
-              "type": "string",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "title": "Message",
+                },
+                "icon": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronLeft",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronRight",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronUp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronDown",
+                    },
+                    {
+                      "type": "string",
+                      "const": "QuestionMarkCircle",
+                    },
+                    {
+                      "type": "string",
+                      "const": "User",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ShoppingCart",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Bars3",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Heart",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MagnifyingGlass",
+                    },
+                    {
+                      "type": "string",
+                      "const": "XMark",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Plus",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Minus",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MapPin",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Phone",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Elo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Mastercard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Visa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Pix",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Logo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Facebook",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Instagram",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Tiktok",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Truck",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Discount",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Return",
+                    },
+                    {
+                      "type": "string",
+                      "const": "CreditCard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Deco",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Discord",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Trash",
+                    },
+                    {
+                      "type": "string",
+                      "const": "FilterList",
+                    },
+                    {
+                      "type": "string",
+                      "const": "WhatsApp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "RightArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DownArrow",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Flag",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Heart",
+                    },
+                  ],
+                  "title": "Icon",
+                },
+              },
+              "required": [
+                "message",
+              ],
             },
             "title": "Alerts",
           },
@@ -965,6 +1235,13 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Page",
           },
+          "flagDescontoOff": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Flag Desconto Off",
+          },
         },
         "required": [
           "page",
@@ -1016,6 +1293,48 @@ const manifest: DecoManifest = {
         },
         "required": [
           "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ThreeBanners.tsx": {
+      "inputSchema": {
+        "title": " Three Banners",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "image": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Image",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image alt text",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description": "When you click you go to",
+                },
+              },
+              "required": [
+                "image",
+                "alt",
+                "href",
+              ],
+            },
+            "title": "Images",
+          },
+        },
+        "required": [
+          "images",
         ],
       },
       "outputSchema": null,

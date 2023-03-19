@@ -19,6 +19,23 @@ function SearchButton() {
   );
 }
 
+function HeartButton() {
+  return (
+    <Button
+      variant="icon"
+      aria-label="Heart icon Button"
+    >
+      <Icon
+        id="Heart"
+        class="text-black"
+        width={20}
+        height={20}
+        strokeWidth={1}
+      />
+    </Button>
+  );
+}
+
 function MenuButton() {
   const { displayMenu } = useUI();
 
@@ -50,7 +67,13 @@ function CartButton() {
         displayCart.value = true;
       }}
     >
-      <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />
+      <Icon
+        id="ShoppingCart"
+        width={24}
+        height={24}
+        strokeWidth={2}
+        class="items-center justify-center"
+      />
       {totalItems && (
         <span class="absolute text-[9px] right-0 top-0 rounded-full bg-badge text-white w-4 h-4 flex items-center justify-center">
           {totalItems}
@@ -60,13 +83,19 @@ function CartButton() {
   );
 }
 
-function HeaderButton({ variant }: { variant: "cart" | "search" | "menu" }) {
+function HeaderButton(
+  { variant }: { variant: "cart" | "search" | "menu" | "heart" },
+) {
   if (variant === "cart") {
     return <CartButton />;
   }
 
   if (variant === "search") {
     return <SearchButton />;
+  }
+
+  if (variant === "heart") {
+    return <HeartButton />;
   }
 
   if (variant === "menu") {
