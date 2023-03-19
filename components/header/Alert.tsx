@@ -39,7 +39,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                     strokeWidth={3}
                     class="text-orangeButton mr-4"
                   />
-                )} {"    "} {alert.message}
+                )}{"      "}{alert.message}
               </Text>
             </>
           ))}

@@ -11,12 +11,13 @@ import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/api/[...catchall].tsx";
 import * as $4 from "./routes/index.tsx";
 import * as $$0 from "./islands/AddToCartButton.tsx";
-import * as $$1 from "./islands/HeaderButton.tsx";
-import * as $$2 from "./islands/HeaderModals.tsx";
-import * as $$3 from "./islands/HeaderSearchMenu.tsx";
-import * as $$4 from "./islands/Logger.tsx";
-import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/SliderJS.tsx";
+import * as $$1 from "./islands/DescriptionModal.tsx";
+import * as $$2 from "./islands/HeaderButton.tsx";
+import * as $$3 from "./islands/HeaderModals.tsx";
+import * as $$4 from "./islands/HeaderSearchMenu.tsx";
+import * as $$5 from "./islands/Logger.tsx";
+import * as $$6 from "./islands/SearchControls.tsx";
+import * as $$7 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CompraParceira.tsx";
@@ -67,13 +68,14 @@ const manifest: DecoManifest = {
     "./routes/index.tsx": $4,
   },
   islands: {
-    "./islands/AddToCartButton.tsx": $$0,
-    "./islands/HeaderButton.tsx": $$1,
-    "./islands/HeaderModals.tsx": $$2,
-    "./islands/HeaderSearchMenu.tsx": $$3,
-    "./islands/Logger.tsx": $$4,
-    "./islands/SearchControls.tsx": $$5,
-    "./islands/SliderJS.tsx": $$6,
+    "./islands/DescriptionModal.tsx": $$0,
+    "./islands/AddToCartButton.tsx": $$1,
+    "./islands/HeaderButton.tsx": $$2,
+    "./islands/HeaderModals.tsx": $$3,
+    "./islands/HeaderSearchMenu.tsx": $$4,
+    "./islands/Logger.tsx": $$5,
+    "./islands/SearchControls.tsx": $$6,
+    "./islands/SliderJS.tsx": $$7,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -522,6 +524,26 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
+                      "const": "MasterCardColored",
+                    },
+                    {
+                      "type": "string",
+                      "const": "VisaColored",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DinersClubColored",
+                    },
+                    {
+                      "type": "string",
+                      "const": "TwoCards",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Close",
+                    },
+                    {
+                      "type": "string",
                       "const": "RightArrow",
                     },
                     {
@@ -742,6 +764,26 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "WhatsApp",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MasterCardColored",
+                              },
+                              {
+                                "type": "string",
+                                "const": "VisaColored",
+                              },
+                              {
+                                "type": "string",
+                                "const": "DinersClubColored",
+                              },
+                              {
+                                "type": "string",
+                                "const": "TwoCards",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Close",
                               },
                               {
                                 "type": "string",

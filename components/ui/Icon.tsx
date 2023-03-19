@@ -35,6 +35,11 @@ export type AvailableIcons =
   | "Trash"
   | "FilterList"
   | "WhatsApp"
+  | "MasterCardColored"
+  | "VisaColored"
+  | "DinersClubColored"
+  | "TwoCards"
+  | "Close"
   | "RightArrow"
   | "DownArrow"
   | "Flag"
@@ -48,6 +53,7 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
    */
   id: AvailableIcons;
   size?: number;
+  color?: string;
 }
 
 function Icon(

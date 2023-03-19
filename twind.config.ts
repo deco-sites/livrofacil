@@ -56,7 +56,7 @@ const options: Omit<Options, "selfURL"> = {
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
         "orangeButton": "#FFB400",
-        "grayEditoras": "#fcfcfc"
+        "grayEditoras": "#fcfcfc",
       },
       textColor: {
         "default": "#161616",
@@ -117,6 +117,10 @@ const options: Omit<Options, "selfURL"> = {
         "body": ["16px", "20px"],
         "caption": ["13px", "16px"],
         "list-price": ["10px", "20px"],
+        "xs": ["10px", "14px"],
+        "sm": ["12px", "16px"],
+        "md": ["14px", "20px"],
+        "base": ["16px", "24px"],
       },
       fontWeight: {
         "heading-1": "500",
@@ -124,9 +128,11 @@ const options: Omit<Options, "selfURL"> = {
         "heading-3": "500",
         "menu": "400",
         "button": "700",
+        "medium": "600",
         "body": "400",
         "caption": "400",
         "list-price": "400",
+        "extraBold": "900",
       },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
@@ -252,11 +258,11 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     "mix-blend-multiply": {
-      "mix-blend-mode": "multiply"
+      "mix-blend-mode": "multiply",
     },
     "bg-blend-multiply": {
-      "background-blend-mode": "multiply"
-    }
+      "background-blend-mode": "multiply",
+    },
   },
 };
 
