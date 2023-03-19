@@ -3,7 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 
 import NavItem from "./NavItem.tsx";
-import { navbarHeight } from "./constants.ts";
+import { navbarHeight, navbarHeightDesk } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import HeaderSearchMenu from "$store/islands/HeaderSearchMenu.tsx";
@@ -34,8 +34,8 @@ function Navbar({ items, searchbar }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3 h-24">
-        <div class="flex-none w-[277px]">
+      <div class="hidden md:flex flex-row justify-center items-center border-b-1 border-default w-full pl-2 pr-3 h-24 md:(border-none px-0 max-w-[1280px] mx-auto)">
+        <div class="flex-1">
           <a
             href="/"
             aria-label="Store logo"
@@ -44,8 +44,7 @@ function Navbar({ items, searchbar }: {
             <Icon id="Logo" width={100} height={42} strokeWidth={0.4} />
           </a>
         </div>
-
-        <div class="flex-none w-[682px]">
+        <div class="flex-1">
           <form action="/" method="get" class="block px-4 py-3 w-[665px]">
             <input
               type="text"
@@ -56,7 +55,7 @@ function Navbar({ items, searchbar }: {
           </form>
         </div>
 
-        <div class="flex-none w-44 flex items-center justify-end gap-2">
+        <div class="flex-1 w-44 flex items-center justify-center gap-2">
           <HeaderButton variant="heart" />
           <HeaderSearchMenu searchbar={searchbar} />
           <Button
@@ -68,6 +67,12 @@ function Navbar({ items, searchbar }: {
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </Button>
           <HeaderButton variant="cart" />
+        </div>
+      </div>
+
+      <div class={`hidden md:flex relative h-[${navbarHeightDesk}] border-t-1 border-white`}>
+        <div class="flex-auto flex justify-center">
+          {items.map((item) => <NavItem item={item} />)}
         </div>
       </div>
     </>

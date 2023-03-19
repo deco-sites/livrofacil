@@ -9,7 +9,7 @@ import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
-import { headerHeight } from "../header/constants.ts";
+import { headerHeight, navbarHeightDesk } from "../header/constants.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -26,7 +26,7 @@ function Controls({ page }: { page: ProductListingPage }) {
 
   return (
     <Container
-      class={`mt-[${headerHeight}] flex flex-col justify-between mb-4 md:mb-0 p-4 sm:gap-4 sm:flex-row sm:h-[53px] sm:justify-between sm:px-4`}
+      class={`mt-[${headerHeight}] sm:pt-[${navbarHeightDesk}] flex flex-col justify-between mb-4 md:mb-0 p-4 sm:gap-4 sm:flex-row sm:h-[53px] sm:justify-between sm:px-4`}
     >
       {/* <Logger value={page} /> */}
       <div class="flex flex-row items-center sm:p-0 mb-6 sm:m-0">

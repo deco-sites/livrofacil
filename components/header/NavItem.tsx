@@ -1,6 +1,6 @@
 import Text from "$store/components/ui/Text.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import { headerHeight } from "./constants.ts";
+import { headerHeight, navbarHeightDesk } from "./constants.ts";
 
 export interface INavItem {
   label: string;
@@ -16,18 +16,17 @@ function NavItem({ item }: { item: INavItem }) {
     <li class="group flex items-center">
       <a href={href} class="px-4 py-3">
         <Text
-          class="group-hover:border-black border-solid border-b border-white"
-          variant="menu"
+          class="group-hover text-[12px]"
         >
           {label}
         </Text>
       </a>
 
-      {children && children.length > 0 &&
+      {/* {children && children.length > 0 &&
         (
           <div
-            class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[${headerHeight}]`}
-            style={{ top: "0px", left: "0px" }}
+            class={`hidden max-w-[1280px] absolute  absolute-center invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen`}
+            style={{ top: navbarHeightDesk}}
           >
             {image?.src && (
               <Image
@@ -59,7 +58,7 @@ function NavItem({ item }: { item: INavItem }) {
               ))}
             </ul>
           </div>
-        )}
+        )} */}
     </li>
   );
 }

@@ -13,6 +13,7 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
+import { headerHeight, navbarHeightDesk } from "../header/constants.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -96,7 +97,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
   console.log({ front, back });
 
   return (
-    <Container class="py-0 sm:py-10">
+    <Container class={`py-0 sm:py-10 sm:mt-[${headerHeight}]`}>
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
         <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
