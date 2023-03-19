@@ -27,10 +27,10 @@ function Gallery(
   },
 ) {
   const filters = page?.filters;
-  
+
   return (
     <Container class="px-4 sm:py-10 md:(flex gap-6)">
-      <Filters filters={filters} class="md:(flex mt-0 p-0 w-1/4)"/>
+      <Filters filters={filters} class="md:(flex mt-0 p-0 w-1/4)" />
       <div class="flex-col md:(w-3/4)">
         <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 md:gap-4 items-center place-items-stretch">
           {page.products?.map((product, index) => (
@@ -45,23 +45,33 @@ function Gallery(
         </div>
         <div class="flex flex-row items-center justify-center gap-2 my-4 md:w-full">
           <a rel="prev" href={page.pageInfo.previousPage ?? "#"}>
-            <Button disabled={!page.pageInfo.previousPage} variant="secondary" class="h-[40px] w-[40px]">
+            <Button
+              disabled={!page.pageInfo.previousPage}
+              variant="secondary"
+              class="h-[40px] w-[40px]"
+            >
               <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
             </Button>
           </a>
-          <Button variant="blank" class="h-[40px] w-[40px] border border-secondaryBlue bg-secondaryBlue rounded">
+          <Button
+            variant="blank"
+            class="h-[40px] w-[40px] border border-secondaryBlue bg-secondaryBlue rounded"
+          >
             <Text tone="default-inverse">
               {page.pageInfo.currentPage + 1}
             </Text>
           </Button>
           <a rel="next" href={page.pageInfo.nextPage ?? "#"}>
-            <Button disabled={!page.pageInfo.nextPage} variant="secondary" class="h-[40px] w-[40px]">
+            <Button
+              disabled={!page.pageInfo.nextPage}
+              variant="secondary"
+              class="h-[40px] w-[40px]"
+            >
               <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
             </Button>
           </a>
         </div>
       </div>
-
     </Container>
   );
 }

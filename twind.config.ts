@@ -219,21 +219,21 @@ const options: Omit<Options, "selfURL"> = {
         display: "none",
       },
     },
-    "scrollbar-color":{
-      "&::-webkit-scrollbar-thumb":{
+    "scrollbar-color": {
+      "&::-webkit-scrollbar-thumb": {
         "background": "#318ac4",
-        "border-radius": "4px"
+        "border-radius": "4px",
       },
-      "&::-webkit-scrollbar":{
-        "width": "9px"
+      "&::-webkit-scrollbar": {
+        "width": "9px",
       },
       "&::-webkit-scrollbar-track": {
         "opacity": ".3",
         "background-color": "#ECF2F6",
         "border": "4px solid transparent",
-        "background-clip": "content-box"
-      }
-    }
+        "background-clip": "content-box",
+      },
+    },
   },
 };
 

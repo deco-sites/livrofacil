@@ -19,7 +19,7 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
-  headerContent?: ComponentChildren 
+  headerContent?: ComponentChildren;
 };
 
 const styles = {
@@ -69,18 +69,18 @@ const Modal = ({
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
       <section class="h-full bg-default flex flex-col">
-        {
-          headerContent ? headerContent : (
-          <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
-            <h1>
-              <Text variant="heading-2">{title}</Text>
-            </h1>
-            <Button variant="icon" onClick={onClose}>
-              <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-            </Button>
-          </header>
-          )
-        }
+        {headerContent
+          ? headerContent
+          : (
+            <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
+              <h1>
+                <Text variant="heading-2">{title}</Text>
+              </h1>
+              <Button variant="icon" onClick={onClose}>
+                <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+              </Button>
+            </header>
+          )}
         <div class="overflow-y-auto h-full flex flex-col">
           {loading === "lazy" ? lazy.value && children : children}
         </div>

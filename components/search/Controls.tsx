@@ -25,7 +25,9 @@ function Controls({ page }: { page: ProductListingPage }) {
   const breadcrumb = page?.breadcrumb;
 
   return (
-    <Container class={`mt-[${headerHeight}] flex flex-col justify-between mb-4 md:mb-0 p-4 sm:gap-4 sm:flex-row sm:h-[53px] sm:justify-between sm:px-4`}>
+    <Container
+      class={`mt-[${headerHeight}] flex flex-col justify-between mb-4 md:mb-0 p-4 sm:gap-4 sm:flex-row sm:h-[53px] sm:justify-between sm:px-4`}
+    >
       {/* <Logger value={page} /> */}
       <div class="flex flex-row items-center sm:p-0 mb-6 sm:m-0">
         <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
@@ -47,19 +49,25 @@ function Controls({ page }: { page: ProductListingPage }) {
       <Modal
         headerContent={
           <div class="flex bg-primaryBlue px-4 justify-between  items-center h-20">
-            <span class="flex gap-1 items-center text-white text-[20px]" >
+            <span class="flex gap-1 items-center text-white text-[20px]">
               Filtrar resultado
               <Icon id="FilterList" width={18} height={18} />
             </span>
             <Button
-							variant="blank"
-							onClick={() => {
+              variant="blank"
+              onClick={() => {
                 open.value = false;
-							}}
+              }}
               class="bg-white h-[36px] px-2 rounded outline-none focus:outline-none active:bg-gray-200 hover:bg-gray-200"
-						>
-							<Icon id="XMark" width={20} height={20} strokeWidth={4} class="stroke-current text-yellowModal"/>
-						</Button>
+            >
+              <Icon
+                id="XMark"
+                width={20}
+                height={20}
+                strokeWidth={4}
+                class="stroke-current text-yellowModal"
+              />
+            </Button>
           </div>
         }
         mode="sidebar-left"

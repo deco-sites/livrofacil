@@ -467,6 +467,10 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "const": "Flag",
                     },
+                    {
+                      "type": "string",
+                      "const": "Heart",
+                    },
                   ],
                   "title": "Icon",
                   "description": "Image src",
@@ -686,6 +690,10 @@ const manifest: DecoManifest = {
                                 "type": "string",
                                 "const": "Flag",
                               },
+                              {
+                                "type": "string",
+                                "const": "Heart",
+                              },
                             ],
                             "title": "Icon",
                           },
@@ -872,6 +880,10 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "Flag",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Heart",
                     },
                   ],
                   "title": "Icon",
