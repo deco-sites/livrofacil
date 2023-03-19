@@ -162,9 +162,10 @@ function ProductCard({ product, preload, flagDescontoOff }: Props) {
             </div>
           )} */
           }
-          <a></a>
+          
         </div>
-
+        </a>
+        
         <div class="flex flex-col gap-1 py-2">
           <Text
             class="overflow-hidden overflow-ellipsis whitespace-nowrap my-2 text-[14px]"
@@ -182,7 +183,7 @@ function ProductCard({ product, preload, flagDescontoOff }: Props) {
             Comprar
           </a>
         </div>
-      </a>
+      
     </div>
   );
 }
