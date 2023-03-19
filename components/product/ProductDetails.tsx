@@ -1,4 +1,3 @@
-import { useSignal } from "@preact/signals";
 import Image from "deco-sites/std/components/Image.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import Container from "$store/components/ui/Container.tsx";
@@ -6,8 +5,10 @@ import Text from "$store/components/ui/Text.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
+import { useUI } from "$store/sdk/useUI.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
+import DescriptionModal from "$store/components/product/DescriptionModal.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
@@ -45,9 +46,54 @@ function Details({ page }: { page: ProductDetailsPage }) {
     brand,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
+  const { displayDescriptionModal } = useUI();
+
   const [front, back] = images ?? [];
 
-  const quantityOfProduct = useSignal(1);
+  const MOCK_SPECIFICATIONS = [
+    {
+      label: "Autor",
+      value: "J. K. Rowling",
+    },
+    {
+      label: "Ano Lançamento",
+      value: "2001",
+    },
+    {
+      label: "Edição",
+      value: "1",
+    },
+    {
+      label: "Número Páginas",
+      value: "536",
+    },
+    {
+      label: "Acabamento",
+      value: "Brochura",
+    },
+    {
+      label: "Idioma",
+      value: "Lingua Portuguesa",
+    },
+    {
+      label: "Altura",
+      value: "21",
+    },
+    {
+      label: "Lagura",
+      value: "14",
+    },
+    {
+      label: "Profundidade",
+      value: "2.8",
+    },
+    {
+      label: "Peso",
+      value: "690 g",
+    },
+  ];
+
+  console.log({ front, back });
 
   return (
     <Container class="py-0 sm:py-10">
@@ -81,16 +127,17 @@ function Details({ page }: { page: ProductDetailsPage }) {
               <Text tone="subdued" variant="caption" class="text(sm lightGray)">
                 ISBN: {gtin}
               </Text>
-              {
-                /* <p>
-                {JSON.stringify(installments, null, 2)}
-              </p> */
-              }
             </div>
             <h1>
               <Text variant="heading-3" class="font-extraBold">{name}</Text>
             </h1>
             <div class="flex flex-col">
+              <Text class="text(base lightGray) mb-1">
+                {MOCK_SPECIFICATIONS.find((spec) => spec.label === "Autor")
+                  ?.label}:{" "}
+                {MOCK_SPECIFICATIONS.find((spec) => spec.label === "Autor")
+                  ?.value}
+              </Text>
               <Text class="text(base lightGray) mb-1">
                 Editora: {brand}
               </Text>
@@ -130,27 +177,23 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 <span class="text(xs lightGray)">Quantidade</span>
                 <div class="flex gap-2 mb-2">
                   <div class="flex items-center">
-                    <button
-                      class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6"
-                      onClick={() => {
-                        if (quantityOfProduct.value <= 1) {
-                          return;
-                        }
+                    <button class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6" // onClick={() => {
+                      //   if (quantityOfProduct === 1) {
+                      //     return;
+                      //   }
 
-                        quantityOfProduct.value--;
-                      }}
+                      //   setQuantityOfProduct((prev) => prev - 1);
+                      // }}
                     >
                       -
                     </button>
                     <div class="flex justify-center w-6 h-6">
-                      {quantityOfProduct.value}
+                      {/* {quantityOfProduct} */}
+                      1
                     </div>
-                    <button
-                      class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6"
-                      onClick={() => {
-                        quantityOfProduct.value++;
-                        console.log(quantityOfProduct);
-                      }}
+                    <button class="font-button bg-primaryBlue text-default-inverse rounded w-6 h-6" // onClick={() => {
+                      //   setQuantityOfProduct((prev) => prev + 1);
+                      // }}
                     >
                       +
                     </button>
@@ -175,7 +218,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
               </span>
             </Button>
             <div>
-              <p class="text(md #333 center)">Formas de pagamento</p>
+              <p class="text(md [#333] center) mb-2">Formas de pagamento</p>
               <ul class="flex gap-2 justify-center">
                 <li>
                   <Icon
@@ -203,21 +246,67 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 </li>
               </ul>
             </div>
-            <div class="outline mt-4">
+            <div class="px-4 mt-8 bg-[#FBFBFB]">
               <ul class="px-4">
-                <li>
-                  <span class="text(sm secondaryColorHeading)">
+                <li class="pt-4 pb-2">
+                  <span class="flex gap-2 items-center text(sm secondaryColorHeading)">
+                    <Icon
+                      id="CreditCard"
+                      width={20}
+                      height={20}
+                      strokeWidth={2}
+                      color="#FFDB00"
+                    />
                     Parcelamento no cartão de crédito
                   </span>
                 </li>
-                <li>
-                  <span class="text(sm secondaryColorHeading)">
+                <li class="pt-2 pb-4">
+                  <span class="flex gap-2 items-center text(sm secondaryColorHeading)">
+                    <Icon
+                      id="TwoCards"
+                      width={20}
+                      height={20}
+                      strokeWidth={2}
+                    />
                     Pagamento em até dois cartões
                   </span>
                 </li>
               </ul>
             </div>
+            <div class="pb-2 mb-8">
+              <p class="text-secondaryTextColor px-0 pt-8 pb-2">
+                Prazo de entrega
+              </p>
+              <div class="flex gap-1">
+                <input
+                  type="text"
+                  class="border border-[#C0C0C0] rounded-sm py-3 pl-4 pr-0"
+                  name="cepText"
+                  id="cep-input"
+                  placeholder="Insira aqui o seu CEP"
+                />
+                <button class="w-full bg-primaryBlue uppercase rounded text-default-inverse">
+                  ok
+                </button>
+              </div>
+              <div class="flex gap-2 items-center text(sm secondaryTextColor) pt-4">
+                <Icon
+                  id="Truck"
+                  width={20}
+                  height={20}
+                  strokeWidth={2}
+                />
+                Entrega em TODO O BRASIL
+              </div>
+              <button
+                class="text(sm primaryColorHeading underline) w-max"
+                onClick={() => displayDescriptionModal.value = true}
+              >
+                Como podemos ajudar?
+              </button>
+            </div>
           </div>
+          <hr />
           {/* Description card */}
           <div class="mt-4 sm:mt-6">
             <Text variant="caption">
@@ -229,8 +318,31 @@ function Details({ page }: { page: ProductDetailsPage }) {
               )}
             </Text>
           </div>
+          {/** Características */}
+          <div>
+            <Text class="text-secondaryBlue !text-heading-3 !font-medium">
+              Características
+            </Text>
+            <table class="border border-[#C0C0C0] p-3 mb-12 mt-4">
+              <tbody>
+                {MOCK_SPECIFICATIONS.map((spec, idx) => {
+                  return (
+                    <tr key={`${spec}-${idx}`}>
+                      <td class="p-4 font-heading-1 text-md text-secondaryTextColor">
+                        {spec.label}
+                      </td>
+                      <td class="w-[45%] text-md text-right p-4 font-medium text-secondaryTextColor">
+                        {spec.value}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
+      <DescriptionModal />
     </Container>
   );
 }

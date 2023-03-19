@@ -34,7 +34,7 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
-        "default": "#FFFFFF",symbol
+        "default": "#FFFFFF",
         "header": "#FFFFFF",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "footer": "#003232",
@@ -112,10 +112,10 @@ const options: Omit<Options, "selfURL"> = {
         "body": ["16px", "20px"],
         "caption": ["13px", "16px"],
         "list-price": ["10px", "20px"],
-        "xs": ["10px"],
-        "sm": ["12px"],
-        "md": ["14px"],
-        "base": ["16px"],
+        "xs": ["10px", "14px"],
+        "sm": ["12px", "16px"],
+        "md": ["14px", "20px"],
+        "base": ["16px", "24px"],
       },
       fontWeight: {
         "heading-1": "500",
@@ -123,6 +123,7 @@ const options: Omit<Options, "selfURL"> = {
         "heading-3": "500",
         "menu": "400",
         "button": "700",
+        "medium": "600",
         "body": "400",
         "caption": "400",
         "list-price": "400",

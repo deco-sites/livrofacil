@@ -8,11 +8,13 @@ import { signal } from "@preact/signals";
 const displayCart = signal(false);
 const displayMenu = signal(false);
 const displaySearchbar = signal(false);
+const displayDescriptionModal = signal(false);
 
 const state = {
   displayCart,
   displayMenu,
   displaySearchbar,
+  displayDescriptionModal,
 };
 
 export const useUI = () => state;
