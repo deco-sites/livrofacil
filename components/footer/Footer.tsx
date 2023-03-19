@@ -61,8 +61,38 @@ export interface Props {
 }
 
 function Footer({ sections = [] }: Props) {
+  const paymentOptions = [
+    {
+      id: "MasterCard",
+      label: "MasterCard",
+    },
+    {
+      id: "Visa",
+      label: "Visa",
+    },
+    {
+      id: "DinersClub",
+      label: "DinersClub",
+    },
+    {
+      id: "Boleto",
+      label: "Boleto",
+    },
+    {
+      id: "Amex",
+      label: "Amex",
+    },
+    {
+      id: "Hipercard",
+      label: "Hipercard",
+    },
+    {
+      id: "Elo",
+      label: "Elo",
+    },
+  ];
   return (
-    <footer class="w-full bg-footer flex flex-col divide-y-1 divide-default">
+    <footer class="w-full bg-secondaryBlue flex flex-col divide-y-1 divide-default">
       <div>
         <Container class="w-full flex flex-col divide-y-1 divide-default">
           <FooterContainer>
@@ -78,6 +108,7 @@ function Footer({ sections = [] }: Props) {
                     <Text
                       variant="heading-3"
                       tone="default-inverse"
+                      class="text-priceColor"
                     >
                       {section.label}
                     </Text>
@@ -89,7 +120,10 @@ function Footer({ sections = [] }: Props) {
                     >
                       {section.children.map((item) => (
                         <li>
-                          <SectionItem item={item} />
+                          <SectionItem
+                            item={item}
+                            class="text-secondaryTextColor opacity-60"
+                          />
                         </li>
                       ))}
                     </ul>
@@ -114,7 +148,7 @@ function Footer({ sections = [] }: Props) {
                       </summary>
 
                       <ul
-                        class={`flex marker:text-blue-500 ${
+                        class={`flex ${
                           isIcon(section.children[0]) ? "flex-row" : "flex-col"
                         } gap-2 px-2 pt-2 pb-4`}
                       >
@@ -137,56 +171,14 @@ function Footer({ sections = [] }: Props) {
       </div>
 
       <div>
-        <Container class="w-full">
-          <FooterContainer class="flex justify-between w-full">
-            <Text
-              class="flex items-center gap-1"
-              variant="body"
-              tone="default-inverse"
-            >
-              Powered by{" "}
-              <a
-                href="https://www.deco.cx"
-                aria-label="powered by https://www.deco.cx"
-              >
-                <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
-              </a>
+        <Container class="w-full bg-white">
+          <FooterContainer class="flex flex-col justify-between w-full">
+            <Text class="text-xs text-lightGray">
+              Livro Fácil @Copyright 2018 | Todos os direitos reservados CNPJ:
+              96.318.142/0016-57 | Rodovia Presidente Dutra km 136 bloco 2 -
+              Eugênio de Melo São José dos Campos / SP CEP: 12247-004 (Centro de
+              Distribuição)
             </Text>
-
-            <ul class="flex items-center justify-center gap-2">
-              <li>
-                <a
-                  href="https://www.instagram.com/deco.cx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram logo"
-                >
-                  <Icon
-                    class="text-default-inverse"
-                    width={32}
-                    height={32}
-                    id="Instagram"
-                    strokeWidth={1}
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://www.deco.cx/discord"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Discord logo"
-                >
-                  <Icon
-                    class="text-default-inverse"
-                    width={32}
-                    height={32}
-                    id="Discord"
-                    strokeWidth={5}
-                  />
-                </a>
-              </li>
-            </ul>
           </FooterContainer>
         </Container>
       </div>
