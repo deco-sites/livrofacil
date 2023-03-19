@@ -68,8 +68,8 @@ const manifest: DecoManifest = {
     "./routes/index.tsx": $4,
   },
   islands: {
-    "./islands/DescriptionModal.tsx": $$0,
-    "./islands/AddToCartButton.tsx": $$1,
+    "./islands/AddToCartButton.tsx": $$0,
+    "./islands/DescriptionModal.tsx": $$1,
     "./islands/HeaderButton.tsx": $$2,
     "./islands/HeaderModals.tsx": $$3,
     "./islands/HeaderSearchMenu.tsx": $$4,
@@ -975,6 +975,26 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "WhatsApp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MasterCardColored",
+                    },
+                    {
+                      "type": "string",
+                      "const": "VisaColored",
+                    },
+                    {
+                      "type": "string",
+                      "const": "DinersClubColored",
+                    },
+                    {
+                      "type": "string",
+                      "const": "TwoCards",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Close",
                     },
                     {
                       "type": "string",
