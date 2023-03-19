@@ -22,9 +22,11 @@ const isIcon = (item: Item): item is IconItem =>
   // deno-lint-ignore no-explicit-any
   typeof (item as any)?.icon === "string";
 
-function SectionItem({ item }: { item: Item }) {
+function SectionItem(
+  { item, class: _class = "" }: { item: Item; class?: string },
+) {
   return (
-    <Text variant="caption" tone="default-inverse">
+    <Text variant="caption" tone="default-inverse" class={_class}>
       {isIcon(item)
         ? (
           <div class="border-default border-1 py-1.5 px-2.5">
@@ -67,13 +69,16 @@ function Footer({ sections = [] }: Props) {
             <Newsletter />
           </FooterContainer>
 
-          <FooterContainer>
+          <FooterContainer class="bg-[#ECF2F6]">
             {/* Desktop view */}
             <ul class="hidden sm:flex flex-row gap-20">
               {sections.map((section) => (
                 <li>
                   <div>
-                    <Text variant="heading-3" tone="default-inverse">
+                    <Text
+                      variant="heading-3"
+                      tone="default-inverse"
+                    >
                       {section.label}
                     </Text>
 
@@ -95,22 +100,30 @@ function Footer({ sections = [] }: Props) {
 
             {/* Mobile view */}
             <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-              {sections.map((section) => (
+              {sections.map((section, idx) => (
                 <li>
                   <Text variant="body" tone="default-inverse">
-                    <details>
-                      <summary>
+                    <details
+                      class={`${
+                        idx === 2 ? "" : "border-b-1 border-[#C9C9C9]"
+                      }`}
+                      open={idx === 2}
+                    >
+                      <summary class="text-priceColor mb-4">
                         {section.label}
                       </summary>
 
                       <ul
-                        class={`flex ${
+                        class={`flex marker:text-blue-500 ${
                           isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                        } gap-2 px-2 pt-2`}
+                        } gap-2 px-2 pt-2 pb-4`}
                       >
                         {section.children.map((item) => (
                           <li>
-                            <SectionItem item={item} />
+                            <SectionItem
+                              item={item}
+                              class="text-secondaryTextColor opacity-60"
+                            />
                           </li>
                         ))}
                       </ul>
