@@ -25,7 +25,7 @@ function Navbar({ items, searchbar }: {
           class={`inline-flex items-center text-white min-h-[${navbarHeight}]`}
           aria-label="Store logo"
         >
-          LIVROFACIL
+          <Icon id="Logo" width={100} height={42} strokeWidth={0.4} />
         </a>
 
         <div class="flex gap-1">
@@ -39,9 +39,9 @@ function Navbar({ items, searchbar }: {
           <a
             href="/"
             aria-label="Store logo"
-            class="block px-4 py-3 w-[277px] text-white text-heading-1"
+            class="px-4 w-[277px] text-white text-heading-1 items-center justify-center flex -mt-5"
           >
-            <Icon id="Logo" width={80} height={35} strokeWidth={0.4} />
+            <Icon id="Logo" width={100} height={42} strokeWidth={0.4} />
           </a>
         </div>
 

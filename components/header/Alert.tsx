@@ -36,9 +36,10 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                     id={alert?.icon}
                     width={20}
                     height={20}
-                    strokeWidth={2}
+                    strokeWidth={3}
+                    class="text-orangeButton mr-4"
                   />
-                )} {alert.message}
+                )} {"    "} {alert.message}
               </Text>
             </>
           ))}
