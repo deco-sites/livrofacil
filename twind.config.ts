@@ -55,6 +55,7 @@ const options: Omit<Options, "selfURL"> = {
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
+        "orangeButton": "#FFB400"
       },
       textColor: {
         "default": "#161616",
