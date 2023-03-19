@@ -56,6 +56,7 @@ const options: Omit<Options, "selfURL"> = {
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
         "orangeButton": "#FFB400",
+        "grayEditoras": "#fcfcfc"
       },
       textColor: {
         "default": "#161616",
@@ -250,6 +251,12 @@ const options: Omit<Options, "selfURL"> = {
         "background-color": "#F5F5F5",
       },
     },
+    "mix-blend-multiply": {
+      "mix-blend-mode": "multiply"
+    },
+    "bg-blend-multiply": {
+      "background-blend-mode": "multiply"
+    }
   },
 };
 

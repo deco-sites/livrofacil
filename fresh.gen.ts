@@ -22,21 +22,22 @@ import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CompraParceira.tsx";
 import * as $$$3 from "./sections/CookieConsent.tsx";
 import * as $$$4 from "./sections/DesignSystem.story.tsx";
-import * as $$$5 from "./sections/Features.tsx";
-import * as $$$6 from "./sections/Footer.tsx";
-import * as $$$7 from "./sections/Header.tsx";
-import * as $$$8 from "./sections/Highlights.tsx";
-import * as $$$9 from "./sections/ProductDetails.tsx";
-import * as $$$10 from "./sections/ProductGallery.tsx";
-import * as $$$11 from "./sections/ProductShelf.tsx";
-import * as $$$12 from "./sections/SearchControls.tsx";
-import * as $$$13 from "./sections/WhatsApp.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$5 from "./sections/Editoras.tsx";
+import * as $$$6 from "./sections/Features.tsx";
+import * as $$$7 from "./sections/Footer.tsx";
+import * as $$$8 from "./sections/Header.tsx";
+import * as $$$9 from "./sections/Highlights.tsx";
+import * as $$$10 from "./sections/ProductDetails.tsx";
+import * as $$$11 from "./sections/ProductGallery.tsx";
+import * as $$$12 from "./sections/ProductShelf.tsx";
+import * as $$$13 from "./sections/SearchControls.tsx";
+import * as $$$14 from "./sections/WhatsApp.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$18 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -79,21 +80,22 @@ const manifest: DecoManifest = {
     "./sections/CompraParceira.tsx": $$$2,
     "./sections/CookieConsent.tsx": $$$3,
     "./sections/DesignSystem.story.tsx": $$$4,
-    "./sections/Features.tsx": $$$5,
-    "./sections/Footer.tsx": $$$6,
-    "./sections/Header.tsx": $$$7,
-    "./sections/Highlights.tsx": $$$8,
-    "./sections/ProductDetails.tsx": $$$9,
-    "./sections/ProductGallery.tsx": $$$10,
-    "./sections/ProductShelf.tsx": $$$11,
-    "./sections/SearchControls.tsx": $$$12,
-    "./sections/WhatsApp.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
+    "./sections/Editoras.tsx": $$$5,
+    "./sections/Features.tsx": $$$6,
+    "./sections/Footer.tsx": $$$7,
+    "./sections/Header.tsx": $$$8,
+    "./sections/Highlights.tsx": $$$9,
+    "./sections/ProductDetails.tsx": $$$10,
+    "./sections/ProductGallery.tsx": $$$11,
+    "./sections/ProductShelf.tsx": $$$12,
+    "./sections/SearchControls.tsx": $$$13,
+    "./sections/WhatsApp.tsx": $$$14,
+    "deco-sites/std/sections/SEO.tsx": $$$15,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$16,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$17,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$18,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$19,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -326,6 +328,48 @@ const manifest: DecoManifest = {
     },
     "./sections/DesignSystem.story.tsx": {
       "inputSchema": null,
+      "outputSchema": null,
+    },
+    "./sections/Editoras.tsx": {
+      "inputSchema": {
+        "title": " Editoras",
+        "type": "object",
+        "properties": {
+          "editoras": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "image": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Image",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image alt text",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description": "When you click you go to",
+                },
+              },
+              "required": [
+                "image",
+                "alt",
+                "href",
+              ],
+            },
+            "title": "Editoras",
+          },
+        },
+        "required": [
+          "editoras",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/Features.tsx": {
