@@ -36,7 +36,7 @@ function Controls({ page }: { page: ProductListingPage }) {
           onClick={() => {
             open.value = true;
           }}
-          class="flex-1"
+          class="flex-1 md:hidden"
         >
           Filtrar por
           <Icon id="FilterList" width={18} height={18} />
@@ -45,14 +45,31 @@ function Controls({ page }: { page: ProductListingPage }) {
       </div>
 
       <Modal
-        title="Filtrar"
+        headerContent={
+          <div class="flex bg-primaryBlue px-4 justify-between  items-center h-20">
+            <span class="flex gap-1 items-center text-white text-[20px]" >
+              Filtrar resultado
+              <Icon id="FilterList" width={18} height={18} />
+            </span>
+            <Button
+							variant="blank"
+							onClick={() => {
+                open.value = false;
+							}}
+              class="bg-white h-[36px] px-2 rounded outline-none focus:outline-none active:bg-gray-200 hover:bg-gray-200"
+						>
+							<Icon id="XMark" width={20} height={20} strokeWidth={4} class="stroke-current text-yellowModal"/>
+						</Button>
+          </div>
+        }
         mode="sidebar-left"
         open={open.value}
         onClose={() => {
           open.value = false;
         }}
+        class="w-5/6"
       >
-        <Filters filters={filters} />
+        <Filters filters={filters} class="flex" />
       </Modal>
     </Container>
   );
