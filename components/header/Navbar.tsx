@@ -41,7 +41,7 @@ function Navbar({ items, searchbar }: {
             aria-label="Store logo"
             class="block px-4 py-3 w-[277px] text-white text-heading-1"
           >
-            LIVROFACIL
+            <Icon id="Logo" width={80} height={35} strokeWidth={0.4} />
           </a>
         </div>
 

@@ -55,7 +55,7 @@ const options: Omit<Options, "selfURL"> = {
         "blueFlag": "#3F69FF",
         "yellowModal": "#FFDB00",
         "orangeTooltip": "#ED9936",
-        "orangeButton": "#FFB400"
+        "orangeButton": "#FFB400",
       },
       textColor: {
         "default": "#161616",
@@ -243,11 +243,11 @@ const options: Omit<Options, "selfURL"> = {
       "&::-webkit-scrollbar": {
         "width": "6px",
         "height": "6px",
-        "background-color": "#F5F5F5"
+        "background-color": "#F5F5F5",
       },
       "&::-webkit-scrollbar-track": {
         "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.3)",
-        "background-color": "#F5F5F5"
+        "background-color": "#F5F5F5",
       },
     },
   },

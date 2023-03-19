@@ -162,28 +162,26 @@ function ProductCard({ product, preload, flagDescontoOff }: Props) {
             </div>
           )} */
           }
-          
         </div>
+      </a>
+
+      <div class="flex flex-col gap-1 py-2">
+        <Text
+          class="overflow-hidden overflow-ellipsis whitespace-nowrap my-2 text-[14px]"
+          variant="caption"
+        >
+          {name}
+        </Text>
+        <ProductPrice
+          {...{ listPrice, price, installmentToObject, offers }}
+        />
+        <a
+          class="h-[36px] px-3 rounded uppercase bg-greenButton font-button text-button text-default-inverse border-transparent hover:bg-greenButtonHover hover:text-default-inverse hover:border-greenButtonHover active:bg-greenButtonHover active:text-default-inverse active:border-greenButtonHover disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none flex justify-center items-center"
+          href={url}
+        >
+          Comprar
         </a>
-        
-        <div class="flex flex-col gap-1 py-2">
-          <Text
-            class="overflow-hidden overflow-ellipsis whitespace-nowrap my-2 text-[14px]"
-            variant="caption"
-          >
-            {name}
-          </Text>
-          <ProductPrice
-            {...{ listPrice, price, installmentToObject, offers }}
-          />
-          <a
-            class="h-[36px] px-3 rounded uppercase bg-greenButton font-button text-button text-default-inverse border-transparent hover:bg-greenButtonHover hover:text-default-inverse hover:border-greenButtonHover active:bg-greenButtonHover active:text-default-inverse active:border-greenButtonHover disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none flex justify-center items-center"
-            href={url}
-          >
-            Comprar
-          </a>
-        </div>
-      
+      </div>
     </div>
   );
 }
