@@ -60,7 +60,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
                 width={20}
                 height={20}
                 strokeWidth={2}
-                class="mr-2"
+                class="mr-2 text-orangeButton"
               />
             )}
             <Text
