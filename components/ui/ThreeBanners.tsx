@@ -22,7 +22,7 @@ export interface Props {
 export default function ThreeBanners({ images }: Props) {
 	return (
 		<div class="w-full ">
-			<Container class="px-4 flex flex-col gap-4 sm:(flex-row justify-between)">
+			<Container class="px-4 flex flex-col gap-4 mb-20 sm:(flex-row justify-between)">
 				{images.map((image) => (
 					<a href={image.href} class={`overflow-hidden flex flex-col gap-4`}>
 						<Image
