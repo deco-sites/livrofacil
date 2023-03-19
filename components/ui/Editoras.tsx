@@ -27,7 +27,7 @@ export default function Editoras({ editoras }: Props) {
 					snap="snap-center sm:snap-start block first:ml-3 sm:first:ml-0 last:mr-6 sm:last:mr-0"
 					class="gap-6 scrollbar-horizontal-min py-4"
 				>
-					{editoras.map((editora) => (
+					{editoras?.map((editora) => (
 						<a
 							href={editora.href}
 							class={`overflow-hidden flex flex-col gap-6 items-center min-w-[90px] sm:min-w-[190px]`}
