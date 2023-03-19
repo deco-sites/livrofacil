@@ -263,6 +263,10 @@ const options: Omit<Options, "selfURL"> = {
     "bg-blend-multiply": {
       "background-blend-mode": "multiply",
     },
+    "absolute-center": {
+      transform: "translateX(-50%)",
+      left: "50%",
+    }
   },
 };
 
