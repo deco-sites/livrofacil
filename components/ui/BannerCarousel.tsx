@@ -40,6 +40,7 @@ export interface Props {
   interval?: number;
 }
 
+// Banner
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   const {
     alt,
