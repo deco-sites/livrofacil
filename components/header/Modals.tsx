@@ -51,12 +51,13 @@ function Modals({ menu, searchbar }: Props) {
 							</h1>
 						</div>
 						<Button
-							variant="icon"
+							variant="blank"
 							onClick={() => {
 								displayMenu.value = false;
 							}}
+              class="bg-white h-[36px] px-2 rounded outline-none focus:outline-none active:bg-gray-200 hover:bg-gray-200 mt-5"
 						>
-							<Icon id="XMark" width={20} height={20} strokeWidth={2} />
+							<Icon id="XMark" width={20} height={20} strokeWidth={4} class="stroke-current text-yellowModal"/>
 						</Button>
 					</header>
 				}
